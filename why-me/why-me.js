@@ -164,20 +164,22 @@ function handleBackClick() {
     displayItem(currentIndex);
 
     // Disable back button if currentIndex is 2 or less
-    document.getElementById('back').disabled = currentIndex <= 1;
+    document.getElementById('back').disabled = currentIndex <= 2;
 }
 
 // Function to handle language button click
 function handleLangBtnClick(langBtn) {
-    langBtnActiveClass = langBtn.classList.contains('eng-btn') ? 'eng-btn' : 'nor-btn';
-    fetchJSONData(langBtnActiveClass === 'eng-btn' ? 'eng' : 'nor');
+    const lang = langBtn.classList.contains('eng-btn') ? 'eng' : 'nor';
+    fetchJSONData(lang);
 }
 
+
+// Function to initialize the page
+// Function to initialize the page
 // Function to initialize the page
 async function initializePage() {
     // Set initial text in card-1
     document.getElementById('card-1').innerHTML = '<p>Start playing!</p>';
-    document.getElementById('card-2').innerHTML = '';
 
     // Disable back button initially
     document.getElementById('back').disabled = true;
@@ -185,6 +187,8 @@ async function initializePage() {
     // Attach event listeners to buttons
     document.getElementById('next').addEventListener('click', handleNextClick);
     document.getElementById('back').addEventListener('click', handleBackClick);
+
+    // Attach event listeners to language buttons
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', () => handleLangBtnClick(btn));
     });
@@ -192,6 +196,9 @@ async function initializePage() {
     // Fetch JSON data for the default language
     await fetchJSONData('eng'); // Assuming English is the default language
 }
+
+
+
 
 // Initialize the page when the window loads
 window.onload = async () => {
@@ -201,4 +208,6 @@ window.onload = async () => {
     // Display placeholder text when the page loads
     displayItem(0, 'Choose language and start playing!');
 };
+
+
 
