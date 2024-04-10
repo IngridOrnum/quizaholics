@@ -1,3 +1,5 @@
+let displayScore = document.getElementById("final-score");
+
 function displayAllAnswers() {
     const dropdownContent = document.getElementById("answers-dropdown");
     if (dropdownContent.style.display === "block") {
@@ -5,7 +7,7 @@ function displayAllAnswers() {
     } else {
         dropdownContent.style.display ="block";
     }
-}
+};
 
 function hideAllAnswers() {
     const hideDropdownContent = document.getElementById("answers-dropdown");
@@ -14,4 +16,15 @@ function hideAllAnswers() {
     } else {
         hideDropdownContent.style.display ="none";
     }
-}
+};
+
+document.addEventListener("DOMContentLoaded", function (){
+    let getScore = localStorage.getItem('score');
+    if(getScore) {
+        displayScore.innerHTML = `${getScore} / 10`;
+    } else {
+        displayScore.innerHTML = '0 / 10';
+    }
+
+});
+

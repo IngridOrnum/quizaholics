@@ -56,6 +56,7 @@ function answerQuestion(clickedButton) {
     if (selectedAnswer === correctAnswer) {
         clickedButton.classList.add('correct');
         score += 1;
+        localStorage.setItem('score', score)
     } else {
         clickedButton.classList.add('incorrect');
         if (correctButton) {

@@ -37,6 +37,7 @@ h1 {
 
 #answers-dropdown {
     padding: 24px;
+    margin-top: 16px;
     background: linear-gradient(45deg, #EF7378, #CA4EC2);
     border-radius: 28px;
     width: 335px;
