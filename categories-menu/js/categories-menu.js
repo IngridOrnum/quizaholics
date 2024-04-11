@@ -43,7 +43,7 @@ function clearActives(classlist) {
 }
 
 function fetchQuestions(selectedCategory, selectedGameMode) {
-    let apiUrlQuestions = `https://opentdb.com/api.php?amount=20&category=${selectedCategory}&type=${selectedGameMode}`;
+    let apiUrlQuestions = `https://opentdb.com/api.php?amount=10&category=${selectedCategory}&type=${selectedGameMode}`;
 
     fetch(apiUrlQuestions)
         .then(response => response.json())

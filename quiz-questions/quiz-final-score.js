@@ -28,3 +28,6 @@ document.addEventListener("DOMContentLoaded", function (){
 
 });
 
+document.addEventListener("DOMContentLoaded", function(){
+    let quizArray = JSON.parse(localStorage.getItem('quizData'));
+});
